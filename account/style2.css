@@ -1,0 +1,188 @@
+body{
+    font-family; Hiragino kaku Gothic ProN","メイリオ",sans-serif;
+}
+
+.nyuryoku{ margin: 0 auto; 
+    border-left:4px blue solid;
+    padding-left:5px;
+    width:100%;
+    font-size:20px;
+}
+
+form{margin:0 auto;
+    background-color:#c9c7c7;
+    border:3px #ebebe solid;
+    width:100%;
+}
+
+form div{
+    padding:15px;
+}
+
+.text, textarea, .dropdown{
+    border:1px solid #dfdfdf;
+    padding:5px;
+    color:#999;
+    background:#fff;
+}
+
+.submit{
+    border:1px solid lightgray;
+    padding:4px 10px;
+    color:white;
+    background-color: dimGray;
+    border-radius: 5px;
+    border-bottom:2px solid gray;
+}
+
+
+
+header{
+    width:100%;
+    height:50px;
+    background-color:black;
+   }
+
+header ul{
+       float:left;
+       line-height:20px;
+      }
+
+header ul li{
+          float:left;
+          list-style:none;
+          padding-right:20px;
+          color:white;
+          font-size:18px;
+         }
+
+main{
+  clear:both;
+  width:100%;
+  margin-top: -100px;
+ }
+
+.main-container{
+             width:100%;
+             margin:0 auto;
+             margin-top:70px;
+            }
+
+.date{font-size: 15px;
+  }
+
+.bookstore{
+        width:100%;
+       }
+
+.blog{
+   margin-left: 25px;
+   margin-top:-20px;
+   font-size: 30px;
+  }
+
+.kizi{
+   margin-left: 25px;
+   margin-top:10px;
+   margin-bottom:-10px;
+   font-size: 30px;
+  }
+
+.box{
+  width:100%;
+  background-color:lightgray;
+  text-align:center;
+  margin-bottom: 20px;
+  font-size: 20px;
+ }
+
+.img1 img{
+      width:100%;
+      }
+.box img{
+      width:420px;
+      margin:20px 5px -20px 0px;
+      padding:2px 2px 2px 2px;
+     }
+
+.box .box2{
+        display:inline-block;
+       }
+
+.box .box3{
+        display:inline-block;
+       }
+
+.right{
+    float:left;
+    margin-top: 10px;
+    width:78%;
+    height:2150px;
+    border-top: 5px solid blue ;
+    border-right: 5px solid blue ;
+    border-bottom: 5px solid blue ;
+   }
+
+h1{
+ border-left:5px solid black;
+ border-bottom:2px solid black;
+ padding-left: 20px;
+ margin-left:10px;
+}
+
+h2{
+ border-bottom: 2px double lightgray ;  
+ margin-left: 5px;
+}
+
+.list{
+   width:100%;
+   margin-left: 45px;
+  }
+
+.left{
+   float:left;
+   margin-top: 10px;
+   width:20%;
+   height:2150px;
+   border-top: 5px solid red ;
+   border-left: 5px solid red ;
+   border-bottom: 5px solid red ;
+  }
+
+.c1{
+ margin-top: 50px;
+}
+
+footer{
+    clear:left;
+    width:100%;
+    height:50px;
+    left:0px;color:white;
+    background-color:black;
+    text-align:center;
+   }
+
+.kiji{
+    background-color:#c9c7c7;
+    width:100%;
+    font-size:30px;
+}
+
+h3{
+    border-bottom:2px solid gray;
+    font-size:30px;
+    padding-left:20px;
+    width:95%;
+    margin-left:10px;
+}
+
+.handlename{
+    font-size:13px;
+    margin-bottom:-35px;
+    margin-bottom:-20px;
+}
+
+.contents{
+    padding-left:20px;
+}
