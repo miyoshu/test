@@ -31,7 +31,7 @@
         </p>
         <p>パスワード
             <br>
-            <?php echo $_POST['password']; ?>
+            <?php $password="password";echo password_hash($password,PASSWORD_DEFAULT); ?>
         </p>
         <p>性別
             <br>

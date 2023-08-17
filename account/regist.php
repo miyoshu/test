@@ -118,7 +118,7 @@
                     <div>
                         <label>パスワード</label>
                         <br>
-                        <input type="text" input type="password" class="text" input pattern="^[a-zA-Z0-9]+$" size="35" name="password">
+                        <input type="text" class="text" input pattern="^[a-zA-Z0-9]+$" size="35" name="password">
                         <p id="validate_msg5" style="color: red;"></p>
                     </div>
                     <div>
