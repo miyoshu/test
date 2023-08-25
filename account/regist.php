@@ -20,7 +20,7 @@
                 if(document.form.family_name.value == "" ){
                     var validate = "名前(姓)が未入力です。";
                     document.getElementById("validate_msg").innerHTML = validate;
-                    checke_result = false;
+                    check_result = false;
                 }
                 if(document.form.last_name.value == "" ){
                     var validate = "名前(名)が未入力です。";
@@ -88,7 +88,7 @@
                     <div>
                         <label>名前(姓)　※ひらがな、漢字のみ</label>
                         <br>
-                        <input type="text" class="text" input pattern="[\u4E00-\u9FFF\u3040-\u309Fー]*" maxlength="10" size=" 35" data-error-required="名前(姓)が未入力です。"  name="family_name" >
+                        <input type="text" class="text" input pattern="[\u4E00-\u9FFF\u3040-\u309Fー]*" maxlength="10" size=" 35"  name="family_name" >
                         <p id="validate_msg" style="color: red;"></p>
                     </div>
                     <div>
@@ -161,7 +161,7 @@
                         </select>
                     </div>
                     <div>
-                        <input type="submit" class="submit"value="確認する" onclick="return check();">
+                        <input type="submit" class="submit" value="確認する" onclick="return check();">
                     </div>
     </div>
 </form>

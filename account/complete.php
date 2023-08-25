@@ -1,11 +1,4 @@
-<?php
-mb_internal_encoding("utf8");
 
-$pdo= new PDO("mysql:dbname=lesson01;host=localhost;","root","");
-
-$pdo ->exec("insert into account(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_01,address_02,authority)
-values('".$_POST['family_name']."','".$_POST['last_name']."','".$_POST['family_name_kana']."','".$_POST['last_name_kana']."','".$_POST['mail']."','".$_POST['password']."','".$_POST['gender']."','".$_POST['postal_code']."','".$_POST['prefecture']."','".$_POST['address_01']."','".$_POST['address_02']."','".$_POST['authority']."');");
-?>
 
 <!doctype HTML>
 <html lang="ja">
@@ -24,8 +17,24 @@ values('".$_POST['family_name']."','".$_POST['last_name']."','".$_POST['family_n
     <main>
     <h1>アカウント登録完了画面</h1>
 
+<?php
+
+mb_internal_encoding("utf8");
+
+
+try{
+    $pdo= new PDO("mysql:dbname=lesson01;host=localhost;","root","");
+    
+    $pdo ->exec("insert into account(family_name,last_name,family_name_kana,last_name_kana,mail,password,gender,postal_code,prefecture,address_01,address_02,authority)
+    values('".$_POST['family_name']."','".$_POST['last_name']."','".$_POST['family_name_kana']."','".$_POST['last_name_kana']."','".$_POST['mail']."','".$_POST['password']."','".$_POST['gender']."','".$_POST['postal_code']."','".$_POST['prefecture']."','".$_POST['address_01']."','".$_POST['address_02']."','".$_POST['authority']."');");
+$result = "登録完了しました。";}catch(PDOException $e){
+    $result = '<FONT COLOR="RED">エラーが発生したためアカウント登録できません。</FONT>';
+}
+
+?>
+
     <div class="complete">
-    <p>登録完了しました</p>
+    <p><?php echo $result; ?></p>
     </div>
 
     <div class="button">
