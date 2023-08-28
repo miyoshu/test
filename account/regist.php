@@ -110,13 +110,13 @@
                         <p id="validate_msg3" style="color: red;"></p>
                     </div>
                     <div>
-                        <label>メールアドレス</label>
+                        <label>メールアドレス　※半角のみ</label>
                         <br>
                         <input type="email" class="text" maxlength="100" size="35" name="mail">
                         <p id="validate_msg4" style="color: red;"></p>
                     </div>
                     <div>
-                        <label>パスワード</label>
+                        <label>パスワード　※半角英数字のみ</label>
                         <br>
                         <input type="text" class="text" input pattern="^[a-zA-Z0-9]+$" size="35" name="password">
                         <p id="validate_msg5" style="color: red;"></p>
@@ -129,7 +129,7 @@
                         </select>
                     </div>
                     <div>
-                        <label>郵便番号</label>
+                        <label>郵便番号　※半角数字のみ</label>
                         <br>
                         <input type="text" class="text" input pattern="^[0-9]+$" size="35" name="postal_code">
                         <p id="validate_msg6" style="color: red;"></p>
@@ -141,13 +141,13 @@
                         <p id="validate_msg7" style="color: red;"></p>
                     </div>
                     <div>
-                        <label>住所(市区町村)</label>
+                        <label>住所(市区町村)　※ひらがな、漢字、数字、カタカナ、記号(ハイフンとスペース)のみ</label>
                         <br>
                         <input type="text" class="text" input pattern="^[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\0-9\u220D\u0020]*$" size="35" name="address_01">
                         <p id="validate_msg8" style="color: red;"></p>
                     </div>
                     <div>
-                        <label>住所(番地)</label>
+                        <label>住所(番地)　※ひらがな、漢字、数字、カタカナ、記号(ハイフンとスペース)のみ</label>
                         <br>
                         <input type="text" class="text" input pattern="^[\u30a0-\u30ff\u3040-\u309f\u3005-\u3006\u30e0-\u9fcf\0-9\u220D\u0020]*$" size="35" name="address_02">
                         <p id="validate_msg9" style="color: red;"></p>

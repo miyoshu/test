@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>アカウント登録確認画面</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="style4.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
         </p>
         <p>パスワード
             <br>
-            <?php $password="password";echo password_hash($password,PASSWORD_DEFAULT); ?>
+            <?php $password="password";echo password_hash($password,PASSWORD_DEFAULT); ?><label>　※ハッシュ化</label>
         </p>
         <p>性別
             <br>
