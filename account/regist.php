@@ -112,7 +112,7 @@
                     <div>
                         <label>メールアドレス　※半角のみ</label>
                         <br>
-                        <input type="email" class="text" maxlength="100" size="35" name="mail">
+                        <input type="text" class="text" maxlength="100" input pattern="^[A-Za-z0-9][A-Za-z0-9_.\-]*@[A-Za-z0-9_.\-]+[.][A-Za-z0-9]+$" size="35" name="mail">
                         <p id="validate_msg4" style="color: red;"></p>
                     </div>
                     <div>
