@@ -66,7 +66,7 @@
         <button type="button" onclick=history.back()>戻る</button>
         </form>
  
-        <form action="complete.php" method="post">
+        <form action="regist_complete.php" method="post">
             <input type="submit" class="button2" value="登録する">
             <input type="hidden" value="<?php echo $_POST['family_name']; ?>" name="family_name">
             <input type="hidden" value="<?php echo $_POST['last_name']; ?>" name="last_name">
