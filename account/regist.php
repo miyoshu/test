@@ -205,8 +205,8 @@
                         <label>アカウント権限</label>
                         <br>
                         <select name="authority">
-                            <option value="user"selected>一般</option>
-                            <option value="admin">管理者</option>
+                            <option value="0"selected>一般</option>
+                            <option value="1">管理者</option>
                         </select>
                     </div>
                     <div>
