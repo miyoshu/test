@@ -71,11 +71,14 @@
                     echo date('Y-m-d', strtotime(str_replace('-','/', $date))); 
                 ?></td>
             <td><form action="update.php">
-                    <button type="button">更新</button>
+                    <button type="button" onclick="location.href='update.php'">更新</button>
                 </form></td>
-            <td><form action="delete.php">
-                    <button type="button">削除</button>
+            <td><form action="delete.php" method=post>
+
+                    <input type=hidden name=id value= <?php echo $row['id']; ?>>
+                    <input type=submit value=削除>
                 </form></td>
+
                 
         </tr>
     <?php
