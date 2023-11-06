@@ -70,8 +70,9 @@
                     $date=$row['update_time']."";
                     echo date('Y-m-d', strtotime(str_replace('-','/', $date))); 
                 ?></td>
-            <td><form action="update.php">
-                    <button type="button" onclick="location.href='update.php'">更新</button>
+            <td><form action="update.php" method=post>
+                    <input type=hidden name=id value= <?php echo $row['id']; ?>>
+                    <input type=submit value=更新>
                 </form></td>
             <td><form action="delete.php" method=post>
 

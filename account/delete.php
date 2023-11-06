@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>アカウント削除画面</title>
-        <link rel="stylesheet" type="text/css" href="style6.css"> 
+        <link rel="stylesheet" type="text/css" href="delete.css"> 
     </head>
 
 
@@ -53,6 +53,12 @@
             </td>
         </tr>
         <tr>
+            <td>パスワード</td>
+            <td>
+                <?php echo "●●●●●●" ?>
+            </td>
+        </tr>
+        <tr>
             <td>性別</td>
             <td>
                 <?php if( $row['gender']=="0"){
@@ -61,6 +67,30 @@
                     echo"女性";} ?>
             </td>
         </tr> 
+        <tr>
+            <td>郵便番号</td>
+            <td>
+                <?php echo $row['postal_code']." "; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>住所(都道府県)</td>
+            <td>
+                <?php echo $row['prefecture']." "; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>住所(市区町村)</td>
+            <td>
+                <?php echo $row['address_01']." "; ?>
+            </td>
+        </tr>
+        <tr>
+            <td>住所(番地)</td>
+            <td>
+                <?php echo $row['address_02']." "; ?>
+            </td>
+        </tr>
         <tr>
             <td>権限</td>
             <td>

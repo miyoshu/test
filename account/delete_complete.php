@@ -1,3 +1,5 @@
+
+
 <?php
 
 try {
@@ -11,24 +13,31 @@ try {
 
     $stmt->execute(array(':id' => $_POST["id"]));
 
-    echo "削除しました。";
+	$result= '削除完了しました';
 
 } catch (Exception $e) {
-          echo 'エラーが発生しました。:' . $e->getMessage();
+		$result= 'エラーが発生しました' . $e->getMessage();
 }
 
 ?>
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>削除完了</title>
-  </head>
-  <body>          
-  <p>
-      <a href="index.php">投稿一覧へ</a>
-  </p> 
+	<head>
+    	<meta charset="utf-8">
+    	<title>削除完了</title>
+		<link rel="stylesheet" type="text/css" href="delete_complete.css">
+	</head>
+	<body> 
+		<h1>アカウント削除完了画面</h1>
+	
+	<div class="complete">
+    <p><?php echo $result; ?></p>
+  	</div>
 
-  </body>
+	<div class="button">
+    <button onclick="location.href='index.php'">TOPページに戻る</button>
+    </div>
+
+  	</body>
 </html>
