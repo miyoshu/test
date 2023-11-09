@@ -24,7 +24,7 @@
             <table>
                 <tr>   
                     <td>
-                        <form action="./update.php" method="post">
+                        <form action="update_confirm.php" method="post">
                         <input type="hidden" name="id" value="<?php echo  $row['id']." "; ?>">
                     </td>
                 </tr>
@@ -127,12 +127,11 @@
         }
         ?>
 
-        <div class=submit>
-        <form action="update_confirm.php" method=post>
-            <input type=hidden name=id value= <?php echo $row['id']; ?>>
-            <input type=submit value=確認する>
-        </form>
+        <div class="submit">
+            <input type="hidden" name="id" value= <?php echo $row['id']; ?>>
+            <input type="submit" value="確認する">
         </div>
+        </form>
     </main>
           
     
