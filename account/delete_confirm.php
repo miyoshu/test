@@ -28,7 +28,8 @@
             </td>
             <td>
                 <form action="delete_complete.php" method=post >
-                    <input type=hidden name=id value= <?php echo $_POST['id']; ?>>
+                    <input type=hidden name="id" value= <?php echo $_POST['id']; ?>>
+                    <input type=hidden name= "delete_flag" value= "1">
                     <input type=submit value=削除する>
             </td>
                 </form>

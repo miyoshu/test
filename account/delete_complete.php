@@ -9,9 +9,9 @@ try {
 
     $dbh = new PDO("mysql:dbname=lesson01;host=localhost;","root","");
 
-    $stmt = $dbh->prepare('DELETE FROM account WHERE id = :id');
+    $stmt = $dbh->prepare('UPDATE account SET delete_flag = :delete_flag WHERE id = :id');
 
-    $stmt->execute(array(':id' => $_POST["id"]));
+    $stmt->execute(array(':id' => $_POST["id"],':delete_flag' => $_POST['delete_flag']));
 
 	$result= '削除完了しました';
 
