@@ -70,14 +70,24 @@
                     $date=$row['update_time']."";
                     echo date('Y-m-d', strtotime(str_replace('-','/', $date))); 
                 ?></td>
-            <td><form action="update.php" method=post>
+            <td>
+                
+                <form action="update.php" method=post>
                     <input type=hidden name=id value= <?php echo $row['id']; ?>>
-                    <input type=submit value=更新>
+                <?php if ( $row['delete_flag']=="0"){ ?>
+                    <input type=submit  value=更新>
+                <?php } else{ ?>
+                    <input type=submit disabled value=更新>
+                <?php } ?>
                 </form></td>
             <td><form action="delete.php" method=post>
-
+                    
                     <input type=hidden name=id value= <?php echo $row['id']; ?>>
+                <?php if ( $row['delete_flag']=="0"){ ?>
                     <input type=submit value=削除>
+                <?php } else{ ?>
+                    <input type=submit disabled value=削除>
+                <?php } ?>
                 </form></td>
 
                 

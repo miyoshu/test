@@ -126,7 +126,6 @@
                         <br>
                         <input type="radio" name="gender" value="0"checked> 男性
                         <input type="radio" name="gender" value="1" >　女性
-                        </select>
                     </div>
                     <div>
                         <label>郵便番号　※半角数字のみ</label>
