@@ -43,11 +43,7 @@
                     document.getElementById("validate_msg4").innerHTML = validate;
                     check_result = false;
                 }
-                if(document.form.password.value == "" ){
-                    var validate = "パスワードが未入力です。";
-                    document.getElementById("validate_msg5").innerHTML = validate;
-                    check_result = false;
-                }
+                
                 if(document.form.postal_code.value == "" ){
                     var validate = "郵便番号が未入力です。";
                     document.getElementById("validate_msg6").innerHTML = validate;
@@ -157,7 +153,7 @@
                         <p>
                     </td>
                     <td>
-                    <input type="text" class="text" input pattern="^[a-zA-Z0-9]+$" maxlength=" 10" size="35" name="password"  value="<?php echo  $row['password'] ?>">
+                    <input type="text" class="text" input pattern="^[a-zA-Z0-9]+$" maxlength=" 10" size="35" name="password"  value="">
                         <p id="validate_msg5" style="color: red;"></p>
                     </td>
                 </tr>

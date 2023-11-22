@@ -31,7 +31,7 @@
         </p>
         <p>パスワード
             <br>
-            ●●●●
+            情報保護のためパスワードは画面に表示されません
         </p>
         <p>性別
             <br>
@@ -73,7 +73,7 @@
             <input type="hidden" value="<?php echo $_POST['family_name_kana']; ?>" name="family_name_kana">
             <input type="hidden" value="<?php echo $_POST['last_name_kana']; ?>" name="last_name_kana">
             <input type="hidden" value="<?php echo $_POST['mail']; ?>" name="mail">
-            <input type="hidden" value="<?php $password="password";echo password_hash($password,PASSWORD_DEFAULT); ?>" name="password">
+            <input type="hidden" value="<?php echo password_hash($_POST['password'], PASSWORD_DEFAULT); ?>" name="password">
             <input type="hidden" value="<?php echo $_POST['gender']; ?>" name="gender">
             <input type="hidden" value="<?php echo $_POST['postal_code']; ?>" name="postal_code">
             <input type="hidden" value="<?php echo $_POST['prefecture']; ?>" name="prefecture">

@@ -22,12 +22,12 @@ mb_internal_encoding("utf8");
 
 try{
     $pdo= new PDO("mysql:dbname=lesson01;host=localhost;","root","");
+    if ($_POST['password']==""){
     $stmt = $pdo->prepare('UPDATE account SET family_name=:family_name,
                                             last_name=:last_name,
                                             family_name_kana=:family_name_kana,
                                             last_name_kana=:last_name_kana,
                                             mail=:mail,
-                                            password=:password,
                                             gender=:gender,
                                             postal_code=:postal_code,
                                             prefecture=:prefecture,
@@ -41,7 +41,6 @@ try{
                         ':family_name_kana' => $_POST['family_name_kana'],
                         ':last_name_kana' => $_POST['last_name_kana'],
                         ':mail' => $_POST['mail'],
-                        ':password' => $_POST['password'],
                         ':gender' => $_POST['gender'],
                         ':postal_code' => $_POST['postal_code'],
                         ':prefecture' => $_POST['prefecture'],
@@ -49,7 +48,36 @@ try{
                         ':address_02' => $_POST['address_02'],
                         ':authority' => $_POST['authority'],
                         ':id' => $_POST['id']
-                    ));
+                    ));}
+    else {
+    $stmt = $pdo->prepare('UPDATE account SET family_name=:family_name,
+                                                last_name=:last_name,
+                                                family_name_kana=:family_name_kana,
+                                                last_name_kana=:last_name_kana,
+                                                mail=:mail,
+                                                password=:password,
+                                                gender=:gender,
+                                                postal_code=:postal_code,
+                                                prefecture=:prefecture,
+                                                address_01=:address_01,
+                                                address_02=:address_02,
+                                                authority=:authority
+                                                WHERE id = :id');
+    
+    $stmt->execute(array(':family_name' => $_POST['family_name'],
+                            ':last_name' => $_POST['last_name'],
+                            ':family_name_kana' => $_POST['family_name_kana'],
+                            ':last_name_kana' => $_POST['last_name_kana'],
+                            ':mail' => $_POST['mail'],
+                            ':password' => password_hash($_POST['password'], PASSWORD_DEFAULT),
+                            ':gender' => $_POST['gender'],
+                            ':postal_code' => $_POST['postal_code'],
+                            ':prefecture' => $_POST['prefecture'],
+                            ':address_01' => $_POST['address_01'],
+                            ':address_02' => $_POST['address_02'],
+                            ':authority' => $_POST['authority'],
+                            ':id' => $_POST['id']
+                        ));}
 
     $result = "登録完了しました。";
 }catch(PDOException $e){

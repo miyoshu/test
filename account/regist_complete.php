@@ -40,7 +40,6 @@ try{
     <div class="button">
     <button onclick="location.href='index.php'">TOPページに戻る</button>
     </div>
-    
     </main>
 <footer>
     Copyright D.I.Works D.I.Blog is the one which provides A to Z about programming
