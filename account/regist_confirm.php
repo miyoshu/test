@@ -1,3 +1,17 @@
+<?php
+    session_start();
+    if(isset($_SESSION['authority'])) {
+        if ($_SESSION['authority']=="1"){   
+        }
+        elseif($_SESSION['authority']=="0"){header('Location: error.php');
+        }
+        else {header('Location: login.php');
+        }
+    } else {
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -59,7 +73,10 @@
         </p> 
         <p>アカウント権限
             <br>
-            <?php echo $_POST['authority']; ?>
+            <?php if( $_POST['authority']=="0"){
+                echo "一般";}
+                else{
+                    echo"管理者";} ?>
         </p>
 
         <form action="regist.php">

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(isset($_SESSION['authority'])) {
+    } else {
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>

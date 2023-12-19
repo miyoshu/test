@@ -65,7 +65,10 @@
                         姓別
                     </td>
                     <td>
-                        <?php echo  $_POST['gender']." "; ?>
+                        <?php if($_POST['gender']=="0"){
+                                echo "男性";}
+                            else{
+                                echo"女性";} ?>
                     </td>
                 </tr>
                 <tr>
@@ -105,7 +108,10 @@
                         アカウント権限
                     </td>
                     <td>
-                        <?php echo  $_POST['authority']." "; ?>
+                    <?php if( $_POST['authority']=="0"){
+                                echo "一般";}
+                        else{
+                                echo"管理者";} ?>
                     </td>
                 </tr>
             </table>
@@ -119,7 +125,7 @@
                     </td>
                     <td>
                         <form action="update_complete.php" method="post">
-                            <input type="submit" class="button2" value="登録する">
+                            <input type="submit" class="button2" value="更新する">
                             <input type="hidden" value="<?php echo $_POST['id']; ?>" name="id">
                             <input type="hidden" value="<?php echo $_POST['family_name']; ?>" name="family_name">
                             <input type="hidden" value="<?php echo $_POST['last_name']; ?>" name="last_name">

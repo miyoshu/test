@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(isset($_SESSION['authority'])) {
+    } else {
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -8,14 +16,20 @@
     </head>
     
     <body>
+
+   
    <img src="diblog_logo.jpg">
    <header>
       <ul>
         <li>トップ</li>
         <li>プロフィール</li>
         <li>D.I.Blogについて</li>
-        <li><a href="regist.php">アカウント登録</a></li>
-        <li><a href="list.php">アカウント一覧</a></li>
+        <?php if ($_SESSION['authority']=="1"){
+        ?><li><a href="regist.php">アカウント登録</a></li>
+        <?php ;}?>
+        <?php if ($_SESSION['authority']=="1"){
+        ?><li><a href="list.php">アカウント一覧</a></li>
+        <?php ;}?>
         <li>問い合わせ</li>
         <li>その他</li>
       </ul>

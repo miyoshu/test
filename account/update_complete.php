@@ -79,7 +79,7 @@ try{
                             ':id' => $_POST['id']
                         ));}
 
-    $result = "登録完了しました。";
+    $result = "更新完了しました。";
 }catch(PDOException $e){
     $result = '<FONT COLOR="RED">エラーが発生したためアカウントを更新できません。</FONT>';
 }

@@ -1,3 +1,17 @@
+<?php
+    session_start();
+    if(isset($_SESSION['authority'])) {
+        if ($_SESSION['authority']=="1"){   
+        }
+        elseif($_SESSION['authority']=="0"){header('Location: error.php');
+        }
+        else {header('Location: login.php');
+        }
+    } else {
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>

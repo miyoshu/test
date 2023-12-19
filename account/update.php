@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(isset($_SESSION['authority'])) {
+    } else {
+        header('Location: login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
     <head>
@@ -153,7 +161,7 @@
                         <p>
                     </td>
                     <td>
-                    <input type="text" class="text" input pattern="^[a-zA-Z0-9]+$" maxlength=" 10" size="35" name="password"  value="">
+                    <input type="text" class="text" input pattern="^[a-zA-Z0-9]+$" maxlength=" 10" size="35" name="password"  value="" placeholder="変更しない場合は未入力">
                         <p id="validate_msg5" style="color: red;"></p>
                     </td>
                 </tr>
