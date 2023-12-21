@@ -29,6 +29,54 @@
 
     <h1>アカウント一覧画面</h1>
 
+  
+
+
+
+
+ 
+    <?php
+    
+        if (isset($_POST["search"])) {
+            $search_family_name = "";
+            $search_last_name = "";
+
+
+            if (isset($_POST["family_name"])){
+            $search_family_name = $_POST["family_name"];
+            }
+            if (isset($_POST["last_name"])){
+            $search_last_name = $_POST["last_name"];
+            }
+            $pdo= new PDO("mysql:dbname=lesson01;host=localhost;","root","");
+            $sql = 'select * from account ';
+            $sth = $pdo->prepare($sql);
+            $sth->execute();
+            $result = $sth->fetchAll();
+        }
+    ?>
+
+ 
+
+
+    <form action="list.php" method=post>
+    <table>
+      <tr>
+        <th>名前(姓)</th>
+        <td>
+          <input type="text" id="name" name="family_name" value=""  />
+        </td>
+        <th>名前(名)</th>
+        <td>
+          <input type="text" id="name" name="last_name" value=""  />
+        </td>
+      </tr>
+      </table>
+      <p><input type="submit" id="search" name="search" value="検索" /></p>
+    </form>
+
+    <?php   if (isset($_POST["search"])) {?>
+
     <table border = "1" style="border-collapse: collapse">
     <tr>
         <th>ID</th>
@@ -46,21 +94,18 @@
     </tr>
 
     <?php
-    $pdo= new PDO("mysql:dbname=lesson01;host=localhost;","root","");
-    $sql = 'select * from account';
-    $sth = $pdo->prepare($sql);
-    $sth->execute();
-    $result = $sth->fetchAll();
     
     foreach ($result as $row) {
     ?>
+
+
         <tr>
-            <td><?php echo $row['id']." "; ?></a></td>
-            <td><?php echo $row['family_name']." "; ?></td>
-            <td><?php echo $row['last_name']." "; ?></td>
-            <td><?php echo $row['family_name_kana']." "; ?></td>
-            <td><?php echo $row['last_name_kana']." "; ?></td> 
-            <td><?php echo $row['mail']." "; ?></td>
+            <td><?php echo $row['id']; ?></a></td>
+            <td><?php echo $row['family_name']; ?></td>
+            <td><?php echo $row['last_name']; ?></td>
+            <td><?php echo $row['family_name_kana']; ?></td>
+            <td><?php echo $row['last_name_kana']; ?></td> 
+            <td><?php echo $row['mail']; ?></td>
             <td><?php if( $row['gender']=="0"){
                 echo "男性";}
                 else{
@@ -77,11 +122,11 @@
                     echo"無効";}
                 ?></td>
             <td><?php
-                    $date=$row['registered_time']."";
+                    $date=$row['registered_time'];
                     echo date('Y-m-d', strtotime(str_replace('-','/', $date))); 
                 ?></td>
             <td><?php
-                    $date=$row['update_time']."";
+                    $date=$row['update_time'];
                     echo date('Y-m-d', strtotime(str_replace('-','/', $date))); 
                 ?></td>
             <td>
@@ -112,6 +157,7 @@
 
 
     </table>
+    <?php } ?>
     
     </main>
      <footer>
