@@ -31,15 +31,16 @@
 
   
 
-
-
-
- 
     <?php
     
         if (isset($_POST["search"])) {
             $search_family_name = "";
             $search_last_name = "";
+            $search_family_name_kana = "";
+            $search_last_name_kana = "";
+            $search_mail = "";
+            $search_gender = "";
+            $search_authority = "";
 
 
             if (isset($_POST["family_name"])){
@@ -48,8 +49,27 @@
             if (isset($_POST["last_name"])){
             $search_last_name = $_POST["last_name"];
             }
+            if (isset($_POST["family_name_kana"])){
+                $search_family_name_kana = $_POST["family_name_kana"];
+            }
+            if (isset($_POST["mail"])){
+                    $search_mail = $_POST["mail"];
+            }
+            if (isset($_POST["gender"])){
+                    $search_gender = $_POST["gender"];
+            }
+            if (isset($_POST["authority"])){
+                    $search_authority = $_POST["authority"];
+            }
             $pdo= new PDO("mysql:dbname=lesson01;host=localhost;","root","");
-            $sql = 'select * from account ';
+            $sql = "select * from account where 
+                family_name like '%{$search_family_name}%' and 
+                last_name like '%{$search_last_name}%' and
+                family_name_kana like '%{$search_family_name_kana}%' and
+                last_name_kana like '%{$search_last_name_kana}%' and
+                mail like '%{$search_mail}%' and
+                gender like '%{$search_gender}%' and
+                authority like '%{$search_authority}%' ";
             $sth = $pdo->prepare($sql);
             $sth->execute();
             $result = $sth->fetchAll();
@@ -60,18 +80,54 @@
 
 
     <form action="list.php" method=post>
-    <table>
-      <tr>
-        <th>名前(姓)</th>
-        <td>
-          <input type="text" id="name" name="family_name" value=""  />
-        </td>
-        <th>名前(名)</th>
-        <td>
-          <input type="text" id="name" name="last_name" value=""  />
-        </td>
-      </tr>
-      </table>
+    <table border="1" style="border-collapse: collapse">
+        <tr>
+            <th>名前(姓)</th>
+                <td>
+                    <input type="text" id="name" name="family_name" value=""  />
+                </td>
+            <th>名前(名)</th>
+                <td>
+                <input type="text" id="name" name="last_name" value=""  />
+                </td>
+        </tr>
+        <tr>
+            <th>カナ(姓)</th>
+                <td>
+                    <input type="text" id="name" name="family_name_kana" value=""  />
+                </td>
+            <th>カナ(名)</th>
+                <td>
+                    <input type="text" id="name" name="last_name_kana" value=""  />
+                </td>
+        </tr>
+        <tr>
+            <th>メールアドレス</th>
+                <td>
+                    <input type="text" id="name" name="mail" value=""  />
+                </td>
+            <th>性別</th>
+                <td>
+                    <input type="radio" name="gender" value="0"checked> 男性
+                    <input type="radio" name="gender" value="1" > 女性
+                    <input type="radio" name="gender" value="" > 未選択
+                </td>
+        </tr>
+        <tr>
+            <th>アカウント権限</th>
+                <td>
+                <select name="authority">
+                            <option value="0"selected>一般</option>
+                            <option value="1">管理者</option>
+                            <option value="">未選択</option>
+
+                </td>
+            <th> </th>
+                <td>
+                    
+                </td>
+        </tr>
+    </table>
       <p><input type="submit" id="search" name="search" value="検索" /></p>
     </form>
 
