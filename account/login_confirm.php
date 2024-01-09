@@ -20,7 +20,8 @@ if (password_verify($_POST['password'], $result['password'])) {
 
     
 } catch (PDOException $e) {
-    $msg = $e->getMessage();
+    $msg = '<FONT COLOR="RED">エラーが発生したためログイン情報を取得できません。</FONT>';
+    $link = '<a href="login.php">戻る</a>';
 }
 ?>
 
